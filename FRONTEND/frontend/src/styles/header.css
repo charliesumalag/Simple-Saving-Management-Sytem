@@ -1,0 +1,13 @@
+.header-container{
+    text-align: center;
+    padding: 3rem 0;
+}
+.header-text{
+    text-align: center;
+    font-size: 2.8rem;
+    color: #444;
+    font-weight: 600;
+}
+.header-text-add{
+    color: #777;
+}
