@@ -4,7 +4,7 @@
     padding: 2rem;
 }
 .form{
-    margin-top: 3rem;
+    margin-top: 1rem;
     display: flex;
     flex-direction: column;
     gap: 1.6rem;
@@ -53,4 +53,7 @@
     font-size: 1.4rem;
     color: #F66A68 ;
     cursor: pointer;
+}
+.error{
+    color: red;
 }

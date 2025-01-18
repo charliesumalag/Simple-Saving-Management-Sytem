@@ -12,6 +12,9 @@ const Register = () => {
         password: '',
         cpassword: ''
     });
+    const [errors, setErrors] = useState({});
+    const [successMessage, setSuccessMessage] = useState('');
+
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -29,6 +32,24 @@ const Register = () => {
                     'Content-Type': 'application/json',
                 },
             });
+            if (response.data.errors) {
+                setErrors(response.data.errors);
+            }else{
+                setSuccessMessage(response.data.message || 'Registered!');
+
+                setTimeout(() => {
+                    setSuccessMessage('');
+                }, 3000);
+
+                setInputData({
+                    firstName: '',
+                    lastName: '',
+                    email: '',
+                    password: '',
+                    cpassword: ''
+                });
+                setErrors({});
+            }
             console.log('Response:', response.data);
             // Handle success (e.g., display a success message or redirect)
         } catch (error) {
@@ -40,6 +61,15 @@ const Register = () => {
         <div className={styles.registerContainer}>
             <Header />
             <form className={styles.form} onSubmit={handleSubmit}>
+                    {errors.password_confirmation && (
+                    <p className={styles.error}>{errors.password_confirmation}</p>
+                    )}
+                    {errors.firstName && <p className={styles.error}>{errors.firstName}</p>}
+                    {errors.lastName && <p className={styles.error}>{errors.lastName}</p>}
+                    {errors.email && <p className={styles.error}>{errors.email}</p>}
+                    {errors.password && <p className={styles.error}>{errors.password}</p>}
+                    {successMessage && <div className={styles.success}>{successMessage}</div>}
+
                 <div className={styles.inputContainer}>
                     <input
                         name="firstName"
@@ -50,6 +80,7 @@ const Register = () => {
                         onChange={handleChange}
                     />
                     <i className={`fa-solid fa-user ${styles.inputIcon}`}></i>
+
                 </div>
                 <div className={styles.inputContainer}>
                     <input
@@ -61,6 +92,7 @@ const Register = () => {
                         onChange={handleChange}
                     />
                     <i className={`fa-solid fa-user ${styles.inputIcon}`}></i>
+
                 </div>
                 <div className={styles.inputContainer}>
                     <input
@@ -72,6 +104,7 @@ const Register = () => {
                         onChange={handleChange}
                     />
                     <i className={`fa-solid fa-envelope ${styles.inputIcon}`}></i>
+
                 </div>
                 <div className={styles.inputContainer}>
                     <input
@@ -83,6 +116,7 @@ const Register = () => {
                         onChange={handleChange}
                     />
                     <i className={`fa-solid fa-unlock ${styles.inputIcon}`}></i>
+
                 </div>
                 <div className={styles.inputContainer}>
                     <input
@@ -94,6 +128,7 @@ const Register = () => {
                         onChange={handleChange}
                     />
                     <i className={`fa-solid fa-unlock ${styles.inputIcon}`}></i>
+
                 </div>
                 <div className="btn-container">
                     <button type="submit" className={`${styles.btn} ${styles.btnRegister}`}>
