@@ -1,2 +1,5 @@
 <?php
-echo 'Hello world';
+require './Framework/Database.php';
+$config = require './config/db.php';
+
+$db = new Database($config);

@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import Header from "../../components/header";
 import styles from './login.module.css';
 
 const login = () => {
+    const [inputeDatas, setInputDatas] = useState({});
+
   return (
     <div className={styles.loginContainer}>
         <Header />
