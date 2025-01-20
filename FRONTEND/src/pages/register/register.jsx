@@ -68,7 +68,7 @@ const Register = () => {
                     {errors.lastName && <p className={styles.error}>{errors.lastName}</p>}
                     {errors.email && <p className={styles.error}>{errors.email}</p>}
                     {errors.password && <p className={styles.error}>{errors.password}</p>}
-                    {successMessage && <div className={styles.success}>{successMessage}</div>}
+                    {successMessage && <div className={styles.message}>{successMessage}</div>}
 
                 <div className={styles.inputContainer}>
                     <input

@@ -53,3 +53,11 @@
     color: #6ABF69 ;
     cursor: pointer;
 }
+.message{
+    font-size: 1.4rem;
+    color: #777;
+}
+.error{
+    color: red;
+    font-size: 1.4rem;
+}
