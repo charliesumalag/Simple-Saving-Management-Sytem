@@ -4,7 +4,8 @@
 }
 .header-text{
     text-align: center;
-    font-size: 2.8rem;
+    padding-inline: 2rem;
+    font-size: 2.6rem;
     color: #444;
     font-weight: 600;
 }

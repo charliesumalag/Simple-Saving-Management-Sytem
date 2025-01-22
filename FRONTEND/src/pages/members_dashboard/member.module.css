@@ -1,0 +1,62 @@
+/* memberDashboard.module.css */
+.dashboardContainer {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.savingsContainer {
+    margin-top: 30px;
+}
+
+.savingsTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.savingsTable th, .savingsTable td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.savingsTable th {
+    background-color: #f2f2f2;
+}
+
+button {
+    padding: 5px 10px;
+    margin: 5px;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.editBtn {
+    background-color: #FFC107;
+}
+
+.deleteBtn {
+    background-color: #DC3545;
+}
+
+.errorMessage {
+    color: red;
+    font-size: 16px;
+    text-align: center;
+    margin: 10px 0;
+}
