@@ -1,12 +1,31 @@
-.header-container{
+.header-container {
+    position: relative; /* Required for pseudo-element positioning */
     text-align: center;
-    padding: 3rem 0;
-}
+    padding: 3rem 5rem;
+    background: url(../../public/nangka.jpg) no-repeat center center/cover;
+    color: white; /* Ensures text is visible */
+  }
+
+  .header-container::before {
+    content: ''; /* Required to make the pseudo-element render */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+  }
+
+  .header-container * {
+    position: relative; /* Ensure text is above the overlay */
+    z-index: 2;
+  }
 .header-text{
     text-align: center;
     padding-inline: 2rem;
     font-size: 2.6rem;
-    color: #444;
+    color: white;
     font-weight: 600;
 }
 .header-text-add{

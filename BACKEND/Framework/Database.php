@@ -4,16 +4,9 @@ class Database
 {
     public $conn;
 
-    /**
-     * Constructor for database class
-     *
-     * @param array $config
-     */
     public function __construct($config)
     {
-
         $dsn = "mysql:host={$config['host']};port={$config['port']};dbname={$config['dbname']}";
-
         $options = [
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ,
@@ -26,19 +19,10 @@ class Database
         }
     }
 
-    /**
-     * Query the database
-     *
-     * @param string $query
-     *
-     * @return PDOStatement
-     * @return PDOException
-     */
     public function query($query, $params = [])
     {
         try {
             $stm = $this->conn->prepare($query);
-
             foreach ($params as $param => $value) {
                 $stm->bindValue(':' . $param, $value);
             }

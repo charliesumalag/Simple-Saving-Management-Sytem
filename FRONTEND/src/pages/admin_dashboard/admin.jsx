@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from "axios";
 import styles from './admin.module.css';
 import { useNavigate } from 'react-router-dom';
+import Saving from "../../components/saving_management/savingManagement";
 
 const Admin = () => {
     const navigate = useNavigate(); // Hook to navigate programmatically
@@ -125,107 +126,15 @@ const Admin = () => {
 
     return (
         <div className={styles.dashboardContainer}>
-            <div className={styles.sidebar}>
-                <div className={styles.sidebarHeader}>Admin Panel</div>
-                <ul className={styles.navLinks}>
-                    <li>Savings Management</li>
-                    <li>User Management</li>
-                </ul>
-            </div>
-
             <div className={styles.mainContent}>
                 <header className={styles.header}>
-                    <h1>Welcome, {user.first_name} {user.last_name}</h1>
-                    <button className={styles.logoutBtn}  onClick={handleLogout}>Logout</button>
+                    <h1 className={styles.adminHeaderText}>Welcome, {user.first_name}</h1>
+                    <i className={`fa-solid fa-gear ${styles.settings}`}></i>
+
                 </header>
-
-                <section className={styles.savingsSection}>
-                    <h2>Savings Management</h2>
-                    <form onSubmit={handleSavingsSubmit} className={styles.form}>
-                        <input
-                            type="number"
-                            name="member"
-                            placeholder="Member Name"
-                            value={newSavings.memberId}
-                            onChange={handleSavingsChange}
-                            className={styles.input}
-                        />
-                        <input
-                            type="number"
-                            name="amount"
-                            placeholder="Amount"
-                            value={newSavings.amount}
-                            onChange={handleSavingsChange}
-                            className={styles.input}
-                        />
-                        <button className={styles.btn}>Add Savings</button>
-                    </form>
-                    <table className={styles.table}>
-                        <thead>
-                            <tr>
-                                <th>Member ID</th>
-                                <th>Amount</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {savings.map((savingsRecord) => (
-                                <tr key={savingsRecord.id}>
-                                    <td>{savingsRecord.memberId}</td>
-                                    <td>{savingsRecord.amount}</td>
-                                    <td>
-                                        <button
-                                            onClick={() => handleDeleteSavings(savingsRecord.id)}
-                                            className={styles.deleteBtn}
-                                        >
-                                            Delete
-                                        </button>
-                                    </td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
-                </section>
-
-                <section className={styles.userManagement}>
-                    <h2>User Management</h2>
-                    <form onSubmit={handleCreateUser} className={styles.form}>
-                        <input
-                            type="email"
-                            name="email"
-                            placeholder="Email"
-                            value={newUser.email}
-                            onChange={(e) => setNewUser({ ...newUser, email: e.target.value })}
-                            className={styles.input}
-                        />
-                        <input
-                            type="password"
-                            name="password"
-                            placeholder="Password"
-                            value={newUser.password}
-                            onChange={(e) => setNewUser({ ...newUser, password: e.target.value })}
-                            className={styles.input}
-                        />
-                        <input
-                            type="text"
-                            name="firstName"
-                            placeholder="First Name"
-                            value={newUser.firstName}
-                            onChange={(e) => setNewUser({ ...newUser, firstName: e.target.value })}
-                            className={styles.input}
-                        />
-                        <input
-                            type="text"
-                            name="lastName"
-                            placeholder="Last Name"
-                            value={newUser.lastName}
-                            onChange={(e) => setNewUser({ ...newUser, lastName: e.target.value })}
-                            className={styles.input}
-                        />
-                        <button className={styles.btn}>Create User</button>
-                    </form>
-                </section>
+                <Saving />
             </div>
+            <button className={styles.logoutBtn}  onClick={handleLogout}>Logout</button>
         </div>
     );
 }

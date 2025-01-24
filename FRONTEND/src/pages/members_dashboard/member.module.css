@@ -1,62 +1,61 @@
-/* memberDashboard.module.css */
-.dashboardContainer {
-    max-width: 900px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-}
-
-h1 {
-    text-align: center;
-    color: #333;
-}
-
-.savingsContainer {
-    margin-top: 30px;
-}
-
-.savingsTable {
+.dashboardContainer{
     width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-}
+    min-height: 100vh;
+    background-color: white;
 
-.savingsTable th, .savingsTable td {
-    padding: 10px;
-    border: 1px solid #ddd;
-    text-align: left;
 }
-
-.savingsTable th {
-    background-color: #f2f2f2;
-}
-
-button {
-    padding: 5px 10px;
-    margin: 5px;
-    border: none;
-    background-color: #007BFF;
+.headerContainer{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 3.2rem  3rem;
     color: white;
-    cursor: pointer;
-    border-radius: 4px;
+    background-color: #1a1a1a;
 }
-
-button:hover {
-    background-color: #0056b3;
+.profileContainer{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
 }
+.logoutBtn{
+    padding: 0.5rem 1.6rem;
+    background-color: #f44336;
+    border: none;
+    border-radius: 0.5rem;
+    color: white;
 
-.editBtn {
-    background-color: #FFC107;
 }
+.headerText{
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: white;
 
-.deleteBtn {
-    background-color: #DC3545;
 }
-
-.errorMessage {
-    color: red;
-    font-size: 16px;
+.savingsContainer{
+    margin-top: 2rem;
+}
+.totalText{
+    font-size: 1.2rem;
+    color: #666;
+    text-align: left;
+    margin-left: 3rem;
+}
+.savingText{
+    text-align: left;
+    margin-left: 3rem;
+    font-size: 2.6rem;
+    font-weight: 600;
+}
+.savingsTable{
+    width: 100%;
     text-align: center;
-    margin: 10px 0;
+    margin-top: 2rem;
+}
+
+th{
+    font-weight: 500;
+    text-align: center;
+}
+td{
+    font-size: 1.4rem;
 }

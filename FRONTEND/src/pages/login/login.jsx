@@ -64,7 +64,6 @@ const login = () => {
     return (
         <div className={styles.loginContainer}>
             <Header />
-
             <form onSubmit={handleSubmit} className={styles.form}>
                 {errors.global && <p className={styles.error}>{errors.global}</p>} {/* Added error handling for global messages */}
                 {errors.email && <p className={styles.error}>{errors.email}</p>}

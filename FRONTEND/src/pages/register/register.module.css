@@ -1,13 +1,15 @@
 .registerContainer{
     width: inherit;
     height: inherit;
-    padding: 2rem;
+
 }
 .form{
     margin-top: 1rem;
     display: flex;
     flex-direction: column;
     gap: 1.6rem;
+    padding: 2rem;
+
 }
 .inputContainer{
     position: relative;
@@ -15,16 +17,17 @@
 .input{
     font-family: var(--font-family);
     width: 100%;
-    padding: 1.4rem;
+    padding: 1.1rem;
     outline: none;
-    border: none;
+    border: 1px solid #999;
     border-radius: 1rem;
     color: #777;
     padding-left: 4.2rem;
 }
 .input::placeholder{
-    padding-left: 0.5rem;
+    padding-left: 0.1rem;
     color: #888;
+    font-family: var(--font-family);
 }
 .inputIcon{
     position: absolute;
@@ -35,12 +38,11 @@
 }
 .btn{
     width: 100%;
-    padding: 1.4rem;
+    padding: 1.5rem;
     border: none;
 }
 .btnRegister{
-    background-color: #6ABF69;
-
+    background-color: #F66A68;
     border-radius: 1rem;
     color: #fff;
 }
@@ -51,7 +53,7 @@
 }
 .span{
     font-size: 1.4rem;
-    color: #F66A68 ;
+    color: #6ABF69 ;
     cursor: pointer;
 }
 .error{

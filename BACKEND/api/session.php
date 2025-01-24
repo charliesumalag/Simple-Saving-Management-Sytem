@@ -7,9 +7,7 @@ header('Access-Control-Allow-Headers: Content-Type');
 header('Access-Control-Allow-Credentials: true');
 header('Access-Control-Allow-Methods: GET');
 
-// Check if the user is logged in and session data is available
 if (isset($_SESSION['user_id'])) {
-    // User is logged in, return session data
     echo json_encode([
         'user' => [
             'user_id' => $_SESSION['user_id'],
@@ -19,6 +17,5 @@ if (isset($_SESSION['user_id'])) {
         ]
     ]);
 } else {
-    // No user is logged in
     echo json_encode(['message' => 'No user is logged in']);
 }
